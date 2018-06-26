@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Beers</h1>
+  <ul class="list-group">
+    {% for beer in beers %}
+      <li class="list-group-item"><a href="beer/{{beer.id}}">{{beer.name}}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

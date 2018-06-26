@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to Shamrock Jack's Beer List</h1>
+    <hr class="my-4">
+    <p>This beer app will be updated daily to show the friends of Shams our beers on tap</p>
+    {% if session.logged_in == NULL %}
+      <a class="btn btn-primary btn-lg" href="/register">Register</a>
+      <a class="btn btn-success btn-lg" href="/login">Login</a>
+    {% endif %}
+    <a class="btn btn-primary btn-lg" href="about" role="button">Take me to the<br>Deliciousness</a>
+  </div>
+{% endblock %}

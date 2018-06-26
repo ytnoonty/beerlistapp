@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Dashboard <small>Welcome {{session.username}}</small></h1>
+  <a  class="btn btn-success" href="/add_article">Add Beer</a>
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Style</th>
+      <th>ABV</th>
+      <th>IBU</th>
+      <th>Brewery</th>
+      <th>Location</th>
+      <th>Website</th>
+      <th>Description</th>
+    </tr>
+    {% for beer in beers %}
+      <tr>
+        <td>{{beer.id}}</td>
+        <td>{{beer.name}}</td>
+        <td>{{beer.style}}</td>
+        <td>{{beer.abv}}</td>
+        <td>{{beer.ibu}}</td>
+        <td>{{beer.brewery}}</td>
+        <td>{{beer.location}}</td>
+        <td>{{beer.website}}</td>
+        <td>{{beer.description}}</td>
+        <td><a href="edit_beer/{{beer.id}}" class="btn btn-defaul pull-right">Edit</a></td>
+        <td>
+          <form action="{{url_for('delete_beer', id=beer.id)}}" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete" class="btn btn-danger">
+          </form>
+        </td>
+      </tr>
+
+    {% endfor %}
+  </table>
+{% endblock %}

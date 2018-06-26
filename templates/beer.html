@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>{{beer.name}}</h1>
+  <hr>
+  <table>
+    <tr><th>Beer :</th><td>{{beer.name}}</td></tr>
+    <tr><th>Style :</th><td>{{beer.style}}</td></tr>
+    <tr><th>ABV % :</th><td>{{beer.abv}}</td></tr>
+    <tr><th>IBU :</th><td>{{beer.ibu}}</td></tr>
+    <tr><th>Brewery :</th><td>{{beer.brewery}}</td></tr>
+    <tr><th>Location :</th><td>{{beer.location}}</td></tr>
+    <tr><th>Website :</th><td>{{beer.website}}</td></tr>
+    <!-- <tr><th>Description :</th><td>{{beer.description}}</td></tr> -->
+  </table>
+  <hr>
+  <!-- <h1>Beer:  {{beer.name}}</h1>
+  <p>Style:  {{beer.style}}</p>
+  <p>ABV%:  {{beer.abv}}</p>
+  <p>IBU:  {{beer.ibu}}</p>
+  <p>Brewery:  {{beer.brewery}}</p>
+  <p>Location:  {{beer.location}}</p>
+  <p>Website:  {{beer.website}}</p> -->
+  <div>
+    <h4>Description</h4>
+    <hr>
+    <p>{{beer.description}}</p>
+</div>
+{% endblock %}
